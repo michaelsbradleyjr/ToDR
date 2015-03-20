@@ -1,0 +1,8 @@
+* MN: Module Name
+MN:Quest For The King
+* MD: Module Description
+MO:Up to four players go into a dungeon_beneath a ruined castle._Your task is to rescue your King,_captured by the monsters within_the dungeon, before he is executed._You must also retrieve the King's_Orb of Power.
+* MQ: Module Quests
+*    Format - Name|Required_Quest(Y/N)|Partial_Quest(Y/N)|Base_Turns|Pref_Level|Fixed_Level_Name|Object_Image|Associated_Monster|Item_Granted|Description_Text|Congratulation_Text
+MQ:Rescue The King|Y|N|18|10|[none]|quest_king.png|Save your King from the clutches of the dungeon monsters.|Well done!_You have saved the King!|[none]|The hour has passed to save your King..._He has been slain by the dungeon's inhabitants.
+MQ:Rainbow Orb|Y|N|20|10|[none]|quest_orb.png|Retrieve the King's Rainbow Orb of Power, before it can be used for evil purposes.|Success!_You have recovered the Rainbow Orb of Power!|[none]|You failed to retrieve the Rainbow Orb of Power in time._It has been turned to dark purposes now...

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Specification-Title: ToDR
+Specification-Version: 0.3
+Implementation-Vendor: Dream Codex Retrogames (www.dreamcodex.com) - Howard Kistler
+Main-Class: com/dreamcodex/todr/util/TODconverter
+Created-By: 1.3.0 (Sun Microsystems Inc.)

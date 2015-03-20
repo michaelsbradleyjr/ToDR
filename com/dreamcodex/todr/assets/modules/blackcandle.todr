@@ -1,0 +1,8 @@
+* MN: Module Name
+MN:The Black Candle
+* MO: Module Description
+MO:A new peril has arisen and new heroes_assemble to deal with the threat._The Black Candle has been lit,_opening a doorway to perilous realms_and threatening the land with darkness._You must reach the Black Candle_and snuff out its malign influence,_destroying it forever within_the flames of the White Fire.
+* MQ: Module Quests
+*    Format - Name|Required_Quest(Y/N)|Partial_Quest(Y/N)|Base_Turns|Pref_Level|Fixed_Level_Name|Object_Image|Associated_Monster|Item_Granted|Description_Text|Congratulation_Text
+MQ:Black Candle|Y|N|12|10|[none]|quest_candle.png|Extinguish the Black Candle to end its malignant influence over the land.|Bravely done!_You have ended the terrible power of the Black Candle!|[none]|Darkness falls._You have failed to reach the Black Candle in time and its grim influence is now secure.|[none]
+MQ:White Fire|Y|N|14|10|[none]|quest_fire.png|Use the White Fire to destroy the Black Candle for all time.|Hail to thee!_The White Fire is found and can be used to destroy the Black Candle forever!|[none]|Sad news indeed._The White Fire has been carried beyond your reach to pits deep and inescapable, and the Black Candle thus remains a peril.|[none]

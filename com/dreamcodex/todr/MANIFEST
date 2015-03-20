@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Specification-Title: ToDR
+Specification-Version: 0.3
+Implementation-Vendor: Dream Codex Retrogames (www.dreamcodex.com) - Howard Kistler
+Class-Path: lib/jl1.0.jar lib/tritonus_share.jar lib/mp3spi1.9.4.jar
+Main-Class: com/dreamcodex/todr/ToDR
+Created-By: 1.3.0 (Sun Microsystems Inc.)

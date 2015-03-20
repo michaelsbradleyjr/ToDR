@@ -1,0 +1,144 @@
+* ITEM PARAMETERS
+*    IM - Item Modification limit, the most that can be added to or subtract from an item's base stat
+IM:5
+*    IP - Item Price Caps - this is the highest price available item for the corresponding level shop
+*    IPW are the weapon price caps
+*    IPA are the armor price caps
+IPW:60|60|60|60|150|150|150|150|160|160|160
+IPA:100|100|100|100|150|150|150|150|200|200|200
+* SPECIAL SHOP ITEMS
+*    IR - Item:Rations (amount|price)
+*    IH - Shop Healing (power|cost)
+IR:10|20
+IH:40|100
+* These are the item classes
+IG:MAP,M,Map,*,itemclass_map.png,icon.png,1
+IG:CURRENCY,C,Currency,*,itemclass_currency.png,icon.png,2
+IG:RATION,R,Ration,*,itemclass_rations.png,icon.png,3
+IG:WPNMELEE,0,Melee Weapon,*,itemclass_weapon_melee.png,icon_weapon_melee.png,4
+IG:WPNRANGE,1,Ranged Weapon,*,itemclass_weapon_ranged.png,icon_weapon_ranged.png,5
+IG:ARMRBODY,2,Body Armor,*,itemclass_armor_body.png,icon_armor_body.png,8
+IG:ARMRSPEC,3,Special Armor,*,itemclass_armor_special.png,icon_armor_special.png,7
+IG:AMMO,X,Ammo,*,itemclass_ammo.png,icon_ammo.png,6
+* These are the required universal item classes
+IU:M,Map
+IU:C,Gold
+IU:R,Ration
+* These are the module specific Item subclasses
+IC:P,Potion,*,itemclass_potion.png,icon_potion.png,11
+IC:S,Scroll,WH,itemclass_scroll.png,icon_scroll.png,10
+IC:W,Wand,*,itemclass_wand.png,icon_wand.png,9
+IC:L,Lantern,*,itemclass_lantern.png,icon_lantern.png,12
+IC:T,Touchstone,*,itemclass_touchstone.png,icon_touchstone.png,13
+* GENERAL ITEM OBJECT DATA FORMATS
+*    Weapon - W?:name,baseDamage,cost,ranged,ammo,permissions,throwable,sound,projectile,imgNormal  ? = N(ormal),D(efault),L(egendary)
+*    Armor  - A?:name,baseProtection,cost,bodyarmor,permissions,changeable,image  ? = N(ormal),D(efault),L(egendary)
+*    Ammo   - XA:name,cost,quantity
+*    Item   - IT:name,itemclass,effect,maxcharges,[unknown],cost (instantaneous if maxcharges == 0)
+* Default Weapon - this is the base "weapon" a player uses when nothing is equipt, normally their fists
+WD:Fists,2,-1,N,-1,*,N,1,N,[none]
+* These are the module specific weapons
+* Like all other items, they should be listed in order of increasing benefit, as this order is used to determine likely depth of discovery as well
+WN:Dagger,4,10,N,-1,*,N,2,N,weapon_melee_dagger
+WN:Hand Ax,6,30,N,-1,FRH,N,2,N,weapon_melee_hand_ax
+WN:Sword,8,50,N,-1,FRH,N,3,N,weapon_melee_sword
+WN:Wizard Blade,8,0,N,-1,*,N,3,N,weapon_melee_wizard_blade
+WN:Battle Ax,10,80,N,-1,FH,N,4,N,weapon_melee_battle_ax
+WN:Elven Blade,12,0,N,-1,*,N,4,N,weapon_melee_elven_blade
+WN:Dwarven Ax,16,160,N,-1,FH,N,5,N,weapon_melee_dwarven_ax
+WN:Sword King,20,0,N,-1,FH,N,5,N,weapon_melee_sword_king
+WN:Sling,2,10,Y,-1,*,N,8,2|C0C0C0,weapon_ranged_sling
+WN:Short Bow,6,30,Y,0,FRH,N,6,1|AA9966,weapon_ranged_short_bow
+WN:Crossbow,8,60,Y,1,FRH,N,7,1|A0A0A0,weapon_ranged_crossbow
+WN:Alertness Bow,6,0,Y,-1,*,N,6,1|BFDFBF,weapon_ranged_alertness_bow
+WN:Bow Of Strength,12,0,Y,2,FRH,N,7,1|445577,weapon_ranged_strength_bow
+WN:Warball & Chain,20,150,Y,-1,FH,Y,9,2|A0A0A0,weapon_dual_warball
+* Weapon Ammo types
+XA:Arrows,10,20
+XA:Quarrels,20,20
+XA:Stone Arrows,50,20
+* Default Armor - this is the base "armor" a player uses when nothing is equipt, normally clothing (body) and none (special)
+AD:Clothes,0,0,Y,*,N,[none]
+AD:(none),0,0,N,*,N,[none]
+* These are the module specific armors
+* Like all other items, they should be listed in order of increasing benefit, as this order is used to determine likely depth of discovery as well
+AN:Shield,1,10,N,FH,Y,armor_special_shield.png
+AN:Leather,3,20,Y,*,Y,[none]
+AN:Magic Armbands,2,0,N,*,Y,armor_special_armbands.png
+AN:Ring Mail,4,50,Y,FH,Y,[none]
+AN:Dancing Shield,3,0,N,FH,Y,armor_special_dancing_shield.png
+AN:Plate Mail,6,100,Y,FH,Y,[none]
+AN:Cloak Of Hiding,5,0,N,*,Y,armor_special_cloak.png
+AN:Elven Mail,8,0,Y,FH,Y,[none]
+AN:Warrior Mail,9,200,Y,FH,Y,[none]
+AN:Hero Mail,10,0,Y,H,Y,[none]
+* These are the module specific items
+* Like all other items, they should be listed in order of increasing benefit, as this order is used to determine likely depth of discovery as well
+IT:Luck Stone,T,(|PLUK|+|S|15),0,0
+IT:Honing Stone,T,(|PWDM|+|P|4),3,0
+IT:Gem Of Strength,T,(|PHPS|+|S|4),0,0
+IT:Omniscient Gem,T,(|PEXP|+|S|250),0,0
+IT:Stumbling Rock,T,(|PLUK|-|S|10),0,0
+IT:Soothing Light,L,(|HLGI|-|@|2),6,0
+IT:Aura Of Warding,L,(|WNDR|-|@|1),6,0
+IT:Rainbow Strobe,L,(|PDMG|-|A|5),2,0
+IT:Path Lightener,L,(|RTNI|+|@|4),6,0
+IT:Smudge Pot,L,(|WNDR|+|@|10),6,0
+IT:Fortifying Brew,P,(|PMBN|+|P|2),1,0
+IT:Reflex Draught,P,(|PABN|+|P|2),1,0
+IT:Lightfoot Lager,P,(|PLUK|+|P|12),1,0
+IT:Medicinal Ale,P,(|PDMG|-|P|20),3,0
+IT:Acid,P,(|PHPS|-|P|5),1,0
+IT:Morale,S,(|MDEF|-|Z|2),4,0
+IT:Protection,S,(|MATC|-|Z|2),4,0
+IT:Esp,S,(|SHWM|0|@|0),4,0
+IT:Repair,S,(|PPRT|+|P|2|3|CCDDFF),3,0
+IT:Memory Absorber,S,(|PEXP|-|P|100|6|FF88AA),1,0
+IT:Fireball,S,(|MDMG|+|Z|8),6,0
+IT:Snare,S,(|MMOB|-|Z|75),8,0
+IT:Find Traps,S,(|SHWT|0|@|0),4,0
+IT:Health Sheath,S,(|PDMG|-|P|30|3|88FFAA),3,0
+IT:Mad Scribble,S,(|PEXP|-|P|200|5|FF88FF),1,0
+IT:Lightning Rod,W,(|MDMG|+|M|15|4|FFFFAA),6,0
+IT:Weapon Hoarder,W,(|WAVL|+|@|100),1,0
+IT:Consuming Beam,W,(|MDMG|+|M|100|8|8899FF),4,0
+IT:Staff Of Life,W,(|PDMG|-|A|20),2,0
+IT:Backfiring Beam,W,(|PDMG|+|P|20|7|FFDDAA),1,0
+IT:Lightning,S,(|MDMG|+|M|30|4|FFFFAA),6,0
+IT:Haste,S,(|PSPD|+|A|1),4,0
+IT:Vulnerability,S,(|MMRS|-|Z|5),3,0
+IT:Goodwill,S,(|MBRB|+|Z|4),3,0
+IT:Despair,S,(|PLUK|-|P|20|6|88AAFF),1,0
+IT:Disintegrate,S,(|MDMG|+|Z|100),2,0
+IT:Nullify Power,S,(|MPER|-|Z|50),4,0
+IT:Suppress Traps,S,(|RMVT|0|@|0),6,0
+IT:Restoration,S,(|PDMG|-|P|100|3|FFFFFF),4,0
+IT:Memory Drain,S,(|PEXP|-|P|400|5|CCFFCC),1,0
+* Trap definitions for chests
+TD:Explosion|PDMG|+|A|5[50]
+TD:Deadfall|PDMG|+|P|8[60]
+TD:Pit Trap|PDMG|+|P|10[70]
+TD:Acid Spray|PPRT|-|P|3[75]
+TD:Fungus|PHPS|-|P|5[85]
+TD:Forget Gas|PEXP|-|P|250[85]
+TD:Metal Mold|PWDM|-|P|4[90]
+TD:Curse|PLUK|-|P|5[95]
+TD:Polymorph|POLY|0|P|10[100]
+TD:Dark Curse|PLUK|-|A|10[110]
+* Fountain Effect definitions
+FX:Healing|PDMG|-|P|4
+FX:Healing|PDMG|-|P|6
+FX:Healing|PDMG|-|P|8
+FX:Healing|PDMG|-|P|10
+FX:Healing|PDMG|-|P|12
+FX:Foulness|PDMG|+|P|4
+FX:Foulness|PDMG|+|P|6
+FX:Foulness|PDMG|+|P|8
+FX:Foulness|PDMG|+|P|10
+FX:Foulness|PDMG|+|P|12
+FX:Fortune|PLUK|+|P|3
+FX:Illomen|PLUK|-|P|3
+FX:Wisdom|PEXP|+|P|10
+FX:Lethe|PEXP|-|P|10
+FX:Vitality|PHPS|+|P|3
+FX:Ague|PHPS|-|P|3

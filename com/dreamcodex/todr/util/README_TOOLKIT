@@ -1,0 +1,51 @@
+==========================
+TOD Toolkit README
+==========================
+
+TOD Toolkit v1.1 (C)2004-2008 Howard Kistler/Dream Codex (www.dreamcodex.com)
+Utility classes for working with Tunnels Of Doom game files.
+
+HOW TO USE THE TOOLKIT
+--------------------------
+
+The TOD Toolkit contains two main classes:
+
+TODparser - Extracts game data from TOD game files.
+TODimager - Extracts image data from TOD game files.
+
+It also includes the assistant class TI99FileFinder, which locates files in
+TI-99/4A disk images.
+
+The toolkit can be conveniently run using either included shell script.
+On Unix/Linux systems, use the todproc.sh script.
+On Windows systems, use the todproc.bat script.
+Both take the same arguments, as shown here:
+
+	todproc DISKIMAGE FILENAME DATAOUT [IMAGEPREFIX]
+
+The arguments are:
+
+DISKIMAGE   - TI-99/4A disk image file containing the TOD game file (include path to disk file if necessary).
+FILENAME    - The name of the game file on the disk image.
+DATAOUT     - The name of the file to save the parsed data to.
+IMAGEPREFIX - Optional prefix to attach to image files (can include path data, if left blank will be same as FILENAME).
+
+Here's are two examples:
+
+	todproc.bat Tunnels.dsk PENNIES output.txt
+
+This will extract the data and images from the TOD "PENNIES" adventure on the "Tunnels.dsk" disk image.
+It will save the data to a file named "output.txt", and the images will be named starting with the label "PENNIES".
+
+	todproc.bat Tunnels.dsk QUEST dump/questdata.txt dump/images/saved
+
+This will extract the data and images from the TOD "QUEST" adventure on the "Tunnels.dsk" disk image.
+It will save the data to a file named "questdata.txt" in the "dump" directory (relatively located to the current directory),
+and the images will go into the "dump/images" subdirectory, with the label "saved" applied to the beginning of each image name.
+
+(To use the Unix/Linux version of the script, simply replace "todproc.bat" with "./todproc.sh")
+
+VERSION INFO
+--------------------------
+1.0 - Initial release
+1.1 - Corrected the TI99FileFinder to deal with zero bytes in file offset addresses properly
